@@ -1,1011 +1,145 @@
 <!DOCTYPE HTML>
-<!--
-	Based on Massively by HTML5 UP — customized for Nazar Lytvinchuk
--->
 <html>
-<head>
-	<title>Nazar Lytvinchuk — Robotics & Mechatronics Engineer</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-	<style>
-		:root {
-			--col-accent: #00d4ff;
-			--col-accent2: #0077ff;
-			--col-dark: #0a0e1a;
-			--col-card: #111827;
-			--col-border: rgba(0, 212, 255, 0.15);
-			--col-text: #c8d6e5;
-			--col-muted: #6b7a99;
-			--font-display: 'Syne', sans-serif;
-			--font-mono: 'Space Mono', monospace;
-		}
-
-		/* ── GLOBAL OVERRIDES ───────────────────────────────── */
-		body, input, select, textarea {
-			font-family: var(--font-mono);
-		}
-
-		h1, h2, h3, h4, h5, h6 {
-			font-family: var(--font-display);
-			letter-spacing: -0.02em;
-		}
-
-		/* ── INTRO SECTION ──────────────────────────────────── */
-		#intro {
-			background: var(--col-dark);
-			padding: 8rem 2rem 6rem;
-			position: relative;
-			overflow: hidden;
-		}
-
-		#intro::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background:
-				radial-gradient(ellipse 80% 60% at 20% 50%, rgba(0,119,255,0.12) 0%, transparent 60%),
-				radial-gradient(ellipse 60% 80% at 80% 30%, rgba(0,212,255,0.08) 0%, transparent 60%);
-			pointer-events: none;
-		}
-
-		#intro::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background-image:
-				linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-				linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-			background-size: 40px 40px;
-			pointer-events: none;
-		}
-
-		#intro h1 {
-			font-family: var(--font-display);
-			font-size: clamp(2.8rem, 7vw, 5.5rem);
-			font-weight: 800;
-			line-height: 1.0;
-			color: #ffffff;
-			margin-bottom: 0.3em;
-			position: relative;
-			z-index: 1;
-		}
-
-		#intro h1 span {
-			background: linear-gradient(135deg, var(--col-accent), var(--col-accent2));
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
-
-		#intro .tagline {
-			font-family: var(--font-mono);
-			font-size: 0.85rem;
-			color: var(--col-accent);
-			letter-spacing: 0.2em;
-			text-transform: uppercase;
-			margin-bottom: 1.5rem;
-			position: relative;
-			z-index: 1;
-		}
-
-		#intro .tagline::before {
-			content: '> ';
-			opacity: 0.5;
-		}
-
-		#intro p {
-			font-family: var(--font-mono);
-			font-size: 0.95rem;
-			color: var(--col-text);
-			max-width: 580px;
-			line-height: 1.8;
-			position: relative;
-			z-index: 1;
-		}
-
-		#intro .actions {
-			position: relative;
-			z-index: 1;
-		}
-
-		/* ── HEADER / NAV ───────────────────────────────────── */
-		#header a.logo {
-			font-family: var(--font-display);
-			font-weight: 800;
-			font-size: 1.1rem;
-			letter-spacing: -0.01em;
-			color: var(--col-accent) !important;
-		}
-
-		/* ── SECTION LABELS ─────────────────────────────────── */
-		.section-label {
-			font-family: var(--font-mono);
-			font-size: 0.75rem;
-			letter-spacing: 0.25em;
-			text-transform: uppercase;
-			color: var(--col-accent);
-			margin-bottom: 0.5rem;
-			display: block;
-		}
-
-		/* ── ABOUT SECTION ──────────────────────────────────── */
-		#about-section {
-			background: var(--col-dark);
-			padding: 5rem 2rem;
-			border-top: 1px solid var(--col-border);
-		}
-
-		.about-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 4rem;
-			max-width: 1100px;
-			margin: 0 auto;
-			align-items: start;
-		}
-
-		@media (max-width: 768px) {
-			.about-grid { grid-template-columns: 1fr; gap: 2rem; }
-		}
-
-		.about-text h2 {
-			font-family: var(--font-display);
-			font-size: 2.2rem;
-			font-weight: 800;
-			color: #fff;
-			margin-bottom: 1rem;
-		}
-
-		.about-text p {
-			font-family: var(--font-mono);
-			font-size: 0.88rem;
-			color: var(--col-text);
-			line-height: 1.9;
-		}
-
-		.stat-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 1rem;
-		}
-
-		.stat-card {
-			background: var(--col-card);
-			border: 1px solid var(--col-border);
-			border-radius: 8px;
-			padding: 1.2rem 1.4rem;
-			transition: border-color 0.3s, transform 0.3s;
-		}
-
-		.stat-card:hover {
-			border-color: var(--col-accent);
-			transform: translateY(-2px);
-		}
-
-		.stat-card .num {
-			font-family: var(--font-display);
-			font-size: 2rem;
-			font-weight: 800;
-			color: var(--col-accent);
-			line-height: 1;
-			margin-bottom: 0.3rem;
-		}
-
-		.stat-card .label {
-			font-family: var(--font-mono);
-			font-size: 0.72rem;
-			color: var(--col-muted);
-			text-transform: uppercase;
-			letter-spacing: 0.1em;
-		}
-
-		/* ── SKILLS SECTION ─────────────────────────────────── */
-		#skills-section {
-			background: #080c18;
-			padding: 5rem 2rem;
-			border-top: 1px solid var(--col-border);
-		}
-
-		.skills-header {
-			max-width: 1100px;
-			margin: 0 auto 3rem;
-		}
-
-		.skills-header h2 {
-			font-family: var(--font-display);
-			font-size: 2.2rem;
-			font-weight: 800;
-			color: #fff;
-		}
-
-		.skills-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 1.2rem;
-			max-width: 1100px;
-			margin: 0 auto;
-		}
-
-		.skill-category {
-			background: var(--col-card);
-			border: 1px solid var(--col-border);
-			border-radius: 10px;
-			padding: 1.6rem;
-			transition: border-color 0.3s;
-		}
-
-		.skill-category:hover {
-			border-color: rgba(0, 212, 255, 0.4);
-		}
-
-		.skill-category h4 {
-			font-family: var(--font-mono);
-			font-size: 0.72rem;
-			letter-spacing: 0.2em;
-			text-transform: uppercase;
-			color: var(--col-accent);
-			margin-bottom: 1rem;
-			padding-bottom: 0.6rem;
-			border-bottom: 1px solid var(--col-border);
-		}
-
-		.skill-tags {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-		}
-
-		.skill-tag {
-			font-family: var(--font-mono);
-			font-size: 0.72rem;
-			color: var(--col-text);
-			background: rgba(0,212,255,0.06);
-			border: 1px solid rgba(0,212,255,0.12);
-			border-radius: 4px;
-			padding: 0.25rem 0.6rem;
-			transition: all 0.2s;
-		}
-
-		.skill-tag:hover {
-			background: rgba(0,212,255,0.15);
-			border-color: var(--col-accent);
-			color: #fff;
-		}
-
-		.skill-tag.highlight {
-			background: rgba(0,212,255,0.12);
-			border-color: rgba(0,212,255,0.3);
-			color: var(--col-accent);
-		}
-
-		/* ── PROJECT CARDS ──────────────────────────────────── */
-		.project-card {
-			background: var(--col-card);
-			border: 1px solid var(--col-border);
-			border-radius: 12px;
-			overflow: hidden;
-			transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-			display: flex;
-			flex-direction: column;
-		}
-
-		.project-card:hover {
-			border-color: rgba(0,212,255,0.5);
-			transform: translateY(-4px);
-			box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,255,0.1);
-		}
-
-		.project-card-header {
-			padding: 1.8rem 1.8rem 0;
-		}
-
-		.project-number {
-			font-family: var(--font-mono);
-			font-size: 0.7rem;
-			color: var(--col-accent);
-			letter-spacing: 0.2em;
-			opacity: 0.7;
-			margin-bottom: 0.5rem;
-		}
-
-		.project-card h3 {
-			font-family: var(--font-display);
-			font-size: 1.1rem;
-			font-weight: 700;
-			color: #fff;
-			margin-bottom: 0.4rem;
-			line-height: 1.3;
-		}
-
-		.project-date {
-			font-family: var(--font-mono);
-			font-size: 0.72rem;
-			color: var(--col-muted);
-			margin-bottom: 1rem;
-		}
-
-		.project-card-body {
-			padding: 0 1.8rem 1.8rem;
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-		}
-
-		.project-card p {
-			font-family: var(--font-mono);
-			font-size: 0.82rem;
-			color: var(--col-text);
-			line-height: 1.8;
-			flex: 1;
-		}
-
-		.project-tech {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.4rem;
-			margin-top: 1.2rem;
-		}
-
-		.tech-tag {
-			font-family: var(--font-mono);
-			font-size: 0.68rem;
-			color: var(--col-accent);
-			background: rgba(0,212,255,0.08);
-			border: 1px solid rgba(0,212,255,0.2);
-			border-radius: 3px;
-			padding: 0.2rem 0.5rem;
-		}
-
-		.project-status {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.4rem;
-			font-family: var(--font-mono);
-			font-size: 0.68rem;
-			color: #00ff88;
-			margin-top: 1rem;
-		}
-
-		.project-status::before {
-			content: '';
-			width: 6px;
-			height: 6px;
-			border-radius: 50%;
-			background: #00ff88;
-			animation: pulse-dot 2s infinite;
-		}
-
-		@keyframes pulse-dot {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50% { opacity: 0.5; transform: scale(0.8); }
-		}
-
-		/* ── PROJECTS SECTION WRAPPER ───────────────────────── */
-		#projects-section {
-			background: var(--col-dark);
-			padding: 5rem 2rem;
-			border-top: 1px solid var(--col-border);
-		}
-
-		.projects-header {
-			max-width: 1100px;
-			margin: 0 auto 3rem;
-		}
-
-		.projects-header h2 {
-			font-family: var(--font-display);
-			font-size: 2.2rem;
-			font-weight: 800;
-			color: #fff;
-		}
-
-		.projects-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-			gap: 1.4rem;
-			max-width: 1100px;
-			margin: 0 auto;
-		}
-
-		/* ── CERT / EDUCATION SECTION ───────────────────────── */
-		#edu-section {
-			background: #080c18;
-			padding: 5rem 2rem;
-			border-top: 1px solid var(--col-border);
-		}
-
-		.edu-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 1.5rem;
-			max-width: 1100px;
-			margin: 2rem auto 0;
-		}
-
-		@media (max-width: 768px) {
-			.edu-grid { grid-template-columns: 1fr; }
-		}
-
-		.edu-card {
-			background: var(--col-card);
-			border: 1px solid var(--col-border);
-			border-radius: 10px;
-			padding: 1.8rem;
-			transition: border-color 0.3s;
-		}
-
-		.edu-card:hover {
-			border-color: rgba(0,212,255,0.4);
-		}
-
-		.edu-card .institution {
-			font-family: var(--font-mono);
-			font-size: 0.72rem;
-			color: var(--col-accent);
-			letter-spacing: 0.15em;
-			text-transform: uppercase;
-			margin-bottom: 0.6rem;
-		}
-
-		.edu-card h3 {
-			font-family: var(--font-display);
-			font-size: 1.1rem;
-			font-weight: 700;
-			color: #fff;
-			margin-bottom: 0.4rem;
-		}
-
-		.edu-card .period {
-			font-family: var(--font-mono);
-			font-size: 0.75rem;
-			color: var(--col-muted);
-			margin-bottom: 0.8rem;
-		}
-
-		.edu-card ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-
-		.edu-card ul li {
-			font-family: var(--font-mono);
-			font-size: 0.78rem;
-			color: var(--col-text);
-			padding: 0.25rem 0;
-			padding-left: 1rem;
-			position: relative;
-		}
-
-		.edu-card ul li::before {
-			content: '›';
-			position: absolute;
-			left: 0;
-			color: var(--col-accent);
-		}
-
-		/* ── CONTACT SECTION ────────────────────────────────── */
-		#contact-section {
-			background: var(--col-dark);
-			padding: 5rem 2rem;
-			border-top: 1px solid var(--col-border);
-			text-align: center;
-		}
-
-		#contact-section h2 {
-			font-family: var(--font-display);
-			font-size: 2.5rem;
-			font-weight: 800;
-			color: #fff;
-			margin-bottom: 1rem;
-		}
-
-		#contact-section p {
-			font-family: var(--font-mono);
-			font-size: 0.88rem;
-			color: var(--col-text);
-			max-width: 500px;
-			margin: 0 auto 2.5rem;
-			line-height: 1.8;
-		}
-
-		.contact-links {
-			display: flex;
-			justify-content: center;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
-
-		.contact-link {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.5rem;
-			font-family: var(--font-mono);
-			font-size: 0.82rem;
-			color: var(--col-accent);
-			border: 1px solid var(--col-accent);
-			border-radius: 6px;
-			padding: 0.7rem 1.4rem;
-			text-decoration: none;
-			transition: all 0.2s;
-		}
-
-		.contact-link:hover {
-			background: var(--col-accent);
-			color: var(--col-dark);
-		}
-
-		.contact-link.primary {
-			background: var(--col-accent);
-			color: var(--col-dark);
-			font-weight: 700;
-		}
-
-		.contact-link.primary:hover {
-			background: var(--col-accent2);
-			border-color: var(--col-accent2);
-			color: #fff;
-		}
-
-		/* ── TIMELINE STRIP ─────────────────────────────────── */
-		.timeline-note {
-			font-family: var(--font-mono);
-			font-size: 0.72rem;
-			color: var(--col-muted);
-			text-align: right;
-			max-width: 1100px;
-			margin: 1rem auto 0;
-			letter-spacing: 0.05em;
-		}
-
-		/* ── FOOTER OVERRIDE ────────────────────────────────── */
-		#copyright {
-			font-family: var(--font-mono);
-			font-size: 0.75rem;
-		}
-
-		/* ── SCROLL ANIMATION ───────────────────────────────── */
-		.fade-up {
-			opacity: 0;
-			transform: translateY(24px);
-			transition: opacity 0.6s ease, transform 0.6s ease;
-		}
-
-		.fade-up.visible {
-			opacity: 1;
-			transform: translateY(0);
-		}
-
-		/* ── NVIDIA BADGE ───────────────────────────────────── */
-		.nvidia-badge {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.4rem;
-			background: linear-gradient(135deg, rgba(118,185,0,0.15), rgba(118,185,0,0.05));
-			border: 1px solid rgba(118,185,0,0.3);
-			border-radius: 4px;
-			padding: 0.25rem 0.6rem;
-			font-family: var(--font-mono);
-			font-size: 0.68rem;
-			color: #76b900;
-			margin-top: 0.6rem;
-		}
-
-		.nvidia-badge::before {
-			content: '▶';
-			font-size: 0.5rem;
-		}
-	</style>
-</head>
-<body class="is-preload">
-<div id="wrapper" class="fade-in">
-
-	<!-- ── INTRO ─────────────────────────────────────────────── -->
-	<div id="intro">
-		<p class="tagline">Mechatronics Engineering Student · SFU · Vancouver, BC</p>
-		<h1>Nazar<br /><span>Lytvinchuk</span></h1>
-		<p>
-			I build robots — from mechanical linkages and custom gearboxes to
-			ROS&nbsp;2 control architectures and reinforcement-learned locomotion policies.
-			Currently developing a bipedal humanoid platform trained with
-			NVIDIA&nbsp;Isaac&nbsp;Lab.
-		</p>
-		<ul class="actions">
-			<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Explore</a></li>
-		</ul>
-	</div>
-
-	<!-- ── HEADER ────────────────────────────────────────────── -->
-	<header id="header">
-		<a href="index.html" class="logo">NL // Robotics</a>
-	</header>
-
-	<!-- ── NAV ───────────────────────────────────────────────── -->
-	<nav id="nav">
-		<ul class="links">
-			<li class="active"><a href="#intro" class="scrolly">Home</a></li>
-			<li><a href="#projects-section" class="scrolly">Projects</a></li>
-			<li><a href="#skills-section" class="scrolly">Skills</a></li>
-			<li><a href="#contact-section" class="scrolly">Contact</a></li>
-		</ul>
-		<ul class="icons">
-			<li><a href="https://linkedin.com/in/nazar-lytvinchuk" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-			<li><a href="https://github.com/" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-		</ul>
-	</nav>
-
-	<!-- ── MAIN ──────────────────────────────────────────────── -->
-	<div id="main">
-
-		<!-- ABOUT -->
-		<section id="about-section">
-			<div class="about-grid">
-				<div class="about-text fade-up">
-					<span class="section-label">About</span>
-					<h2>Engineer by instinct,<br />builder by habit.</h2>
-					<p>
-						I'm a second-year Mechatronics Engineering student at Simon Fraser University
-						with an unusual amount of project depth for my level. Over the past year
-						I've independently designed, built, and programmed five generations of
-						robotic systems — each iteration more complex than the last.
-					</p>
-					<p style="margin-top: 1rem;">
-						My work spans the full stack: SolidWorks mechanical design, embedded C++
-						firmware, ROS 2 control architecture, and now reinforcement-learning-based
-						locomotion using NVIDIA's Physical AI toolchain. I'm currently seeking a
-						robotics or embedded controls co-op for Fall 2026.
-					</p>
-				</div>
-				<div class="stat-grid fade-up">
-					<div class="stat-card">
-						<div class="num">5</div>
-						<div class="label">Robotic Systems Built</div>
+	<head>
+		<title>Nazar | Mechatronics Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<div id="wrapper" class="fade-in">
+
+				<div id="intro">
+						<h1>Mechatronics<br />
+						Engineering</h1>
+						<p>3rd-year student at Simon Fraser University specializing in robotics, control systems, and mechanical design.</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
 					</div>
-					<div class="stat-card">
-						<div class="num">6</div>
-						<div class="label">Degrees of Freedom</div>
-					</div>
-					<div class="stat-card">
-						<div class="num">ROS 2</div>
-						<div class="label">Control Architecture</div>
-					</div>
-					<div class="stat-card">
-						<div class="num">Isaac</div>
-						<div class="label">Sim-to-Real Pipeline</div>
-					</div>
-				</div>
-			</div>
-		</section>
 
-		<!-- PROJECTS -->
-		<section id="projects-section">
-			<div class="projects-header fade-up">
-				<span class="section-label">Work</span>
-				<h2>Project Timeline</h2>
+				<header id="header">
+						<a href="index.html" class="logo">Nazar's Portfolio</a>
+					</header>
+
+				<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<div id="main">
+
+						<article class="post featured">
+								<header class="major">
+									<span class="date">January 2026</span>
+									<h2><a href="robotic-arm.html">6-DOF Robotic Arm<br />
+									with Cycloidal Drive</a></h2>
+									<p>Engineered a 6-axis robotic arm featuring a custom cycloidal drive mechanism. Programmed in C++ and fully version-controlled on GitHub.</p>
+								</header>
+								<a href="robotic-arm.html" class="image main"><img src="images/pic01.jpg" alt="6-DOF Robotic Arm" /></a>
+								<ul class="actions special">
+									<li><a href="robotic-arm.html" class="button large">View Project</a></li>
+								</ul>
+							</article>
+
+						<section class="posts">
+								<article>
+									<header>
+										<span class="date">March 2026</span>
+										<h2><a href="#">Bipedal Robot<br />
+										Development</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="Bipedal Robot" /></a>
+									<p>Currently developing a bipedal robot utilizing ST3215 servo motors and an ESP32-S3 development board for advanced articulation and control.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">January 2026</span>
+										<h2><a href="#">Inverted Pendulum<br />
+										Control System</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="Inverted Pendulum" /></a>
+									<p>Designed and built an inverted pendulum as a demonstration project for a university competition, implementing theoretical control systems.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">February 2026</span>
+										<h2><a href="#">SolidWorks<br />
+										Roll Cage Demo</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="SolidWorks Roll Cage" /></a>
+									<p>Recreated a full car safety roll cage in SolidWorks, heavily utilizing advanced CAD features like Weldments and Assemblies.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">January 2026</span>
+										<h2><a href="#">Hackathon Initial<br />
+										Data Analysis</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="Python Data Analysis" /></a>
+									<p>Led a hackathon team's Initial Data Analysis (IDA), building streamlined templates using Python, pandas, and Jupyter notebooks.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">View Project</a></li>
+									</ul>
+								</article>
+							</section>
+
+					</div>
+
+				<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>Location</h3>
+								<p>Vancouver, BC<br />
+								Canada</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">your.email@example.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<div id="copyright">
+						<ul><li>&copy; Nazar</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
 			</div>
 
-			<div class="projects-grid">
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-				<!-- P1: Bipedal -->
-				<div class="project-card fade-up">
-					<div class="project-card-header">
-						<div class="project-number">01 / CURRENT</div>
-						<h3>Bipedal Humanoid Robot Platform</h3>
-						<div class="project-date">March 2026 – Present</div>
-					</div>
-					<div class="project-card-body">
-						<p>
-							Full-stack bipedal robot from scratch. Training locomotion policies
-							using NVIDIA Isaac Lab (reinforcement learning) and building a
-							sim-to-real pipeline in Isaac Sim before physical deployment on an
-							ESP32-S3 edge compute module. Designing ST3215 serial bus servo
-							linkage geometry and coordinate frames for dynamic walking gaits.
-						</p>
-						<div class="nvidia-badge">NVIDIA Isaac Lab / Sim</div>
-						<div class="project-tech">
-							<span class="tech-tag">ESP32-S3</span>
-							<span class="tech-tag">ROS 2</span>
-							<span class="tech-tag">Isaac Lab</span>
-							<span class="tech-tag">Isaac Sim</span>
-							<span class="tech-tag">Reinforcement Learning</span>
-							<span class="tech-tag">Robot Kinematics</span>
-							<span class="tech-tag">Sim-to-Real</span>
-						</div>
-						<div class="project-status">Active development</div>
-					</div>
-				</div>
-
-				<!-- P2: Inverted Pendulum -->
-				<div class="project-card fade-up">
-					<div class="project-card-header">
-						<div class="project-number">02</div>
-						<h3>Inverted Pendulum Dynamic Control System</h3>
-						<div class="project-date">February 2026 – Present</div>
-					</div>
-					<div class="project-card-body">
-						<p>
-							C++ state-space control system with eigenvalue analysis to stabilize
-							a highly dynamic physical plant in real time. Built a sensor fusion
-							pipeline fusing high-speed rotary encoder data into high-frequency
-							PID loops. Full hardware integration of stepper motors with systematic
-							signal noise debugging.
-						</p>
-						<div class="project-tech">
-							<span class="tech-tag">C++</span>
-							<span class="tech-tag">State-Space Control</span>
-							<span class="tech-tag">Sensor Fusion</span>
-							<span class="tech-tag">PID</span>
-							<span class="tech-tag">Stepper Motors</span>
-							<span class="tech-tag">Eigenvalue Analysis</span>
-						</div>
-						<div class="project-status">Finalizing integration</div>
-					</div>
-				</div>
-
-				<!-- P3: 6-DOF Cycloidal -->
-				<div class="project-card fade-up">
-					<div class="project-card-header">
-						<div class="project-number">03</div>
-						<h3>6-DOF Robotic Arm with Cycloidal Actuators</h3>
-						<div class="project-date">November 2025 – January 2026</div>
-					</div>
-					<div class="project-card-body">
-						<p>
-							End-to-end 6-axis robotic arm designed in SolidWorks with custom
-							3D-printed cycloidal gearboxes to eliminate backlash. Full ROS 2
-							control architecture with tf2 coordinate frame transforms,
-							URDF/launch files, and forward/inverse kinematics. Closed-loop PID
-							tuned on all six axes.
-						</p>
-						<div class="project-tech">
-							<span class="tech-tag">ROS 2</span>
-							<span class="tech-tag">SolidWorks</span>
-							<span class="tech-tag">tf2</span>
-							<span class="tech-tag">PID Control</span>
-							<span class="tech-tag">Inverse Kinematics</span>
-							<span class="tech-tag">Linux</span>
-						</div>
-					</div>
-				</div>
-
-				<!-- P4: Planetary -->
-				<div class="project-card fade-up">
-					<div class="project-card-header">
-						<div class="project-number">04</div>
-						<h3>Robotic Manipulator with Planetary Gearing</h3>
-						<div class="project-date">September – November 2025</div>
-					</div>
-					<div class="project-card-body">
-						<p>
-							Custom planetary gearing system designed in SolidWorks and integrated
-							into a full robotic arm assembly. Programmed closed-loop brushless
-							motor control in C++ with a modular architecture covering motion
-							planning, feedback control, and calibration routines.
-						</p>
-						<div class="project-tech">
-							<span class="tech-tag">SolidWorks</span>
-							<span class="tech-tag">C++</span>
-							<span class="tech-tag">Brushless Motors</span>
-							<span class="tech-tag">Motion Planning</span>
-							<span class="tech-tag">Closed-Loop Control</span>
-						</div>
-					</div>
-				</div>
-
-				<!-- P5: Servo Arm -->
-				<div class="project-card fade-up">
-					<div class="project-card-header">
-						<div class="project-number">05</div>
-						<h3>6-DOF Servo Robotic Arm Prototype</h3>
-						<div class="project-date">June – August 2025</div>
-					</div>
-					<div class="project-card-body">
-						<p>
-							The origin of the series. Initial robotic arm concept designed in
-							SolidWorks with component selection and procurement. ROS control
-							architecture with motion planning for trajectory execution — the
-							foundation for four increasingly complex iterations.
-						</p>
-						<div class="project-tech">
-							<span class="tech-tag">ROS</span>
-							<span class="tech-tag">SolidWorks</span>
-							<span class="tech-tag">Servo Control</span>
-							<span class="tech-tag">Motion Planning</span>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<p class="timeline-note">Projects listed most-recent first · All independently conceived and built</p>
-		</section>
-
-		<!-- SKILLS -->
-		<section id="skills-section">
-			<div class="skills-header fade-up">
-				<span class="section-label">Capabilities</span>
-				<h2>Technical Skills</h2>
-			</div>
-			<div class="skills-grid">
-				<div class="skill-category fade-up">
-					<h4>Programming</h4>
-					<div class="skill-tags">
-						<span class="skill-tag highlight">C++</span>
-						<span class="skill-tag highlight">Python</span>
-						<span class="skill-tag">C</span>
-						<span class="skill-tag">MATLAB</span>
-						<span class="skill-tag">Simulink</span>
-						<span class="skill-tag">Git</span>
-						<span class="skill-tag">Linux / Ubuntu</span>
-					</div>
-				</div>
-				<div class="skill-category fade-up">
-					<h4>Physical AI & Simulation</h4>
-					<div class="skill-tags">
-						<span class="skill-tag highlight">NVIDIA Isaac Lab</span>
-						<span class="skill-tag highlight">NVIDIA Isaac Sim</span>
-						<span class="skill-tag">Reinforcement Learning</span>
-						<span class="skill-tag">Sim-to-Real Transfer</span>
-						<span class="skill-tag">Physics Simulation</span>
-					</div>
-				</div>
-				<div class="skill-category fade-up">
-					<h4>Robotics & Control</h4>
-					<div class="skill-tags">
-						<span class="skill-tag highlight">ROS 2</span>
-						<span class="skill-tag">tf2 / Coordinate Frames</span>
-						<span class="skill-tag">Robot Kinematics</span>
-						<span class="skill-tag">PID Control</span>
-						<span class="skill-tag">State-Space Modeling</span>
-						<span class="skill-tag">Sensor Fusion</span>
-						<span class="skill-tag">Trajectory Optimization</span>
-					</div>
-				</div>
-				<div class="skill-category fade-up">
-					<h4>Hardware & Embedded</h4>
-					<div class="skill-tags">
-						<span class="skill-tag highlight">ESP32 / STM32</span>
-						<span class="skill-tag">Serial Bus Protocols</span>
-						<span class="skill-tag">Stepper & Brushless Motors</span>
-						<span class="skill-tag">Rotary Encoders</span>
-						<span class="skill-tag">Real-Time Control</span>
-						<span class="skill-tag">Signal Debugging</span>
-					</div>
-				</div>
-				<div class="skill-category fade-up">
-					<h4>Design & Manufacturing</h4>
-					<div class="skill-tags">
-						<span class="skill-tag highlight">SolidWorks</span>
-						<span class="skill-tag">3D Modeling</span>
-						<span class="skill-tag">Rapid Prototyping</span>
-						<span class="skill-tag">Component Selection</span>
-						<span class="skill-tag">Cycloidal Gearboxes</span>
-					</div>
-				</div>
-				<div class="skill-category fade-up">
-					<h4>Industrial Automation</h4>
-					<div class="skill-tags">
-						<span class="skill-tag highlight">Siemens SMSCP Certified</span>
-						<span class="skill-tag">PLCs</span>
-						<span class="skill-tag">Pneumatic Systems</span>
-						<span class="skill-tag">Electrical Drives</span>
-						<span class="skill-tag">Control Architecture</span>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- EDUCATION -->
-		<section id="edu-section">
-			<div style="max-width: 1100px; margin: 0 auto;">
-				<span class="section-label fade-up">Background</span>
-				<h2 class="fade-up" style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem;">Education & Credentials</h2>
-			</div>
-			<div class="edu-grid">
-				<div class="edu-card fade-up">
-					<div class="institution">Simon Fraser University</div>
-					<h3>BASc — Mechatronics Engineering</h3>
-					<div class="period">2023 – Expected August 2028</div>
-					<ul>
-						<li>Robotics, Control Systems, Embedded Programming</li>
-						<li>State-Space Modeling, Dynamics & Kinematics</li>
-						<li>Digital Systems, Signal Processing</li>
-					</ul>
-				</div>
-				<div class="edu-card fade-up">
-					<div class="institution">Siemens SITRAIN — Digital Industry Academy</div>
-					<h3>Mechatronic Systems Certification (SMSCP)</h3>
-					<div class="period">January 2026 · Cert. No. 1-41-0217</div>
-					<ul>
-						<li>Electrical Components & Drives</li>
-						<li>Pneumatic & Hydraulic Control Circuits</li>
-						<li>Digital Fundamentals & PLCs</li>
-						<li>Mechanical Components</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
-		<!-- CONTACT -->
-		<section id="contact-section">
-			<span class="section-label">Get in touch</span>
-			<h2>Open to co-op opportunities</h2>
-			<p>
-				Currently seeking robotics, embedded controls, or mechatronics
-				co-op positions for Fall 2026. Based in Vancouver, BC —
-				open to opportunities across Canada and internationally.
-			</p>
-			<div class="contact-links">
-				<a href="mailto:nla106@sfu.ca" class="contact-link primary">nla106@sfu.ca</a>
-				<a href="https://linkedin.com/in/nazar-lytvinchuk" class="contact-link" target="_blank">LinkedIn</a>
-				<a href="https://github.com/" class="contact-link" target="_blank">GitHub</a>
-			</div>
-		</section>
-
-	</div><!-- /main -->
-
-	<!-- FOOTER -->
-	<footer id="footer">
-		<section class="split contact">
-			<section>
-				<h3>Location</h3>
-				<p>Vancouver, BC, Canada</p>
-			</section>
-			<section>
-				<h3>Email</h3>
-				<p><a href="mailto:nla106@sfu.ca">nla106@sfu.ca</a></p>
-			</section>
-			<section>
-				<h3>Phone</h3>
-				<p><a href="tel:+12368383234">(236) 838-3234</a></p>
-			</section>
-			<section>
-				<h3>Links</h3>
-				<ul class="icons alt">
-					<li><a href="https://linkedin.com/in/nazar-lytvinchuk" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-				</ul>
-			</section>
-		</section>
-	</footer>
-
-	<div id="copyright">
-		<ul>
-			<li>&copy; Nazar Lytvinchuk 2026</li>
-			<li>Design: <a href="https://html5up.net">HTML5 UP</a> · Customized</li>
-		</ul>
-	</div>
-
-</div><!-- /wrapper -->
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-	// Scroll-triggered fade-up animations
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry, i) => {
-			if (entry.isIntersecting) {
-				setTimeout(() => {
-					entry.target.classList.add('visible');
-				}, (entry.target.dataset.delay || 0));
-				observer.unobserve(entry.target);
-			}
-		});
-	}, { threshold: 0.1 });
-
-	document.querySelectorAll('.fade-up').forEach((el, i) => {
-		el.dataset.delay = (i % 4) * 80;
-		observer.observe(el);
-	});
-</script>
-</body>
+	</body>
 </html>
