@@ -7,44 +7,44 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <style>
-            /* Disable transitions for instant color loading */
+            /* Force all text to be dark so it's visible on the light background */
             body.is-preload * { transition: none !important; }
+            body, p, li, span { color: #333333 !important; }
+            h1, h2, h3, h4, h5, h6, strong, b { color: #1a1f24 !important; }
             
-            /* OUTER BACKGROUND: Your custom cream color */
             #wrapper {
-                background-color: rgb(255, 254, 212) !important;
+                /* YOUR CUSTOM BACKGROUND COLOR HERE */
+                background-color: rgb(255, 254, 212) !important; 
                 background-image: none !important;
-                padding-top: 3rem;
+                padding-top: 3rem; 
             }
             #bg { display: none !important; } 
-
-            /* TEXT COLORS: Dark for visibility on cream */
-            body, p, li, span, h1, h2, h3, h4, h5, h6 { color: #212931 !important; }
             
-            /* NAVIGATION: Darken the nav bar so it stands out */
-            #nav { background-color: #f7f7f0 !important; border-bottom: 1px solid #d4d4cc; }
-            #nav ul.links li.active a { background-color: #ffffff !important; color: #212931 !important; }
-
-            /* MAIN CONTENT AREA: Pure white to separate from the cream background */
-            #main { 
-                background-color: #ffffff !important; 
-                box-shadow: 0 0 20px rgba(0,0,0,0.05);
-                border-radius: 4px;
-                margin-top: 2rem;
-            }
-
-            /* Intro section fixes */
             #intro {
                 height: auto !important;
                 min-height: 0 !important;
-                padding: 2rem 0 4rem 0 !important;
+                padding: 2rem 0 6rem 0 !important; 
                 background: none !important;
-                opacity: 1 !important;
+                opacity: 1 !important; 
                 visibility: visible !important;
-                transform: none !important;
+                transform: none !important; 
+                position: relative !important;
+                z-index: 2 !important;
             }
-            #intro h1 { font-size: 3.5rem !important; margin-bottom: 0.5rem !important; }
-            #intro .actions, #header { display: none !important; }
+            #intro h1 {
+                font-size: 3rem !important;
+                margin-bottom: 1rem !important;
+            }
+            #intro p {
+                font-size: 1rem !important;
+                margin-bottom: 0 !important;
+            }
+            
+            #intro .actions { display: none !important; }
+            #header { display: none !important; }
+            
+            /* Make sure the main content boxes look good on the cream background */
+            #main { background-color: #ffffff; border: 1px solid #e0e0e0; }
         </style>
     </head>
     <body class="is-preload">
@@ -73,15 +73,15 @@
                             <header class="major">
                                 <h2>About Me</h2>
                             </header>
-                            <p>Hi, I am Nazar [cite: 4], a 3rd-year Mechatronics Engineering student at Simon Fraser University [cite: 4] actively seeking co-op opportunities. Passionate about bridging the gap between physical hardware and intelligent control systems[cite: 4], I specialize in end-to-end mechanical design, embedded programming, and dynamic robotics.</p>
+                            <p>Hi, I am Nazar, a 3rd-year Mechatronics Engineering student at Simon Fraser University actively seeking co-op opportunities. Passionate about bridging the gap between physical hardware and intelligent control systems, I specialize in end-to-end mechanical design, embedded programming, and dynamic robotics.</p>
                             
                             <h3>Technical Expertise</h3>
                             <ul>
-                                <li><strong>Education:</strong> Bachelor of Applied Science in Mechatronics Engineering, SFU (Expected Aug 2028) [cite: 4]</li>
-                                <li><strong>Physical AI & Simulation:</strong> NVIDIA Isaac Sim, Isaac Lab, Reinforcement Learning for robot locomotion, Sim-to-Real transfer, Physics-Based Simulation [cite: 4]</li>
-                                <li><strong>Programming & Software:</strong> C++, Python, MATLAB, ROS 2, Linux, Git [cite: 4]</li>
-                                <li><strong>Hardware & CAD:</strong> SolidWorks, 3D Modeling, Rapid Prototyping, ESP32/STM32 Microcontrollers, Stepper/Brushless Servos [cite: 4]</li>
-                                <li><strong>Control Systems:</strong> Robot Kinematics, PID Control, State-Space Modeling, Sensor Fusion [cite: 4]</li>
+                                <li><strong>Education:</strong> Bachelor of Applied Science in Mechatronics Engineering, SFU (Expected Aug 2028)</li>
+                                <li><strong>Physical AI & Simulation:</strong> NVIDIA Isaac Sim, Isaac Lab, Reinforcement Learning for robot locomotion, Sim-to-Real transfer, Physics-Based Simulation</li>
+                                <li><strong>Programming & Software:</strong> C++, Python, MATLAB, ROS 2, Linux, Git</li>
+                                <li><strong>Hardware & CAD:</strong> SolidWorks, 3D Modeling, Rapid Prototyping, ESP32/STM32 Microcontrollers, Stepper/Brushless Servos</li>
+                                <li><strong>Control Systems:</strong> Robot Kinematics, PID Control, State-Space Modeling, Sensor Fusion</li>
                             </ul>
                         </section>
 
@@ -91,8 +91,8 @@
                             </header>
                             <div class="row">
                                 <div class="col-12">
-                                    <h3>Siemens Mechatronic Systems Certification (SMSCP) [cite: 4]</h3>
-                                    <p>Certified in electrical components, mechanical and electrical drives, pneumatic and hydraulic circuits, digital fundamentals, and Programmable Logic Controllers (PLCs)[cite: 4].</p>
+                                    <h3>Siemens Mechatronic Systems Certification (SMSCP)</h3>
+                                    <p>Certified in electrical components, mechanical and electrical drives, pneumatic and hydraulic circuits, digital fundamentals, and Programmable Logic Controllers (PLCs).</p>
                                     <ul class="actions">
                                         <li><a href="siemens-certificate.pdf" target="_blank" class="button primary">View Certificate</a></li>
                                     </ul>
@@ -104,13 +104,13 @@
                                 
                                 <article>
                                     <header>
-                                        <span class="date">March 2026 - Present [cite: 4]</span>
+                                        <span class="date">March 2026 - Present</span>
                                         <h2><a href="bipedal-robot.html">Bipedal Humanoid<br />
                                         Robot Platform</a></h2>
                                         <p style="text-align: center; font-weight: bold; color: #ff6666; margin-top: -1rem; margin-bottom: 1rem;">[ IN PROGRESS ]</p>
                                     </header>
                                     <a href="bipedal-robot.html" class="image fit"><img src="images/pic02.jpg" alt="Bipedal Robot" /></a>
-                                    <p>Training bipedal locomotion policies using NVIDIA Isaac Lab via reinforcement learning. Developing a sim-to-real pipeline for an ESP32-S3 edge compute module[cite: 4].</p>
+                                    <p>Training bipedal locomotion policies using NVIDIA Isaac Lab via reinforcement learning. Developing a sim-to-real pipeline for an ESP32-S3 edge compute module to validate dynamic walking gaits.</p>
                                     <ul class="actions special">
                                         <li><a href="bipedal-robot.html" class="button">View Project</a></li>
                                     </ul>
@@ -118,13 +118,13 @@
 
                                 <article>
                                     <header>
-                                        <span class="date">Feb 2026 - Present [cite: 4]</span>
+                                        <span class="date">Feb 2026 - Present</span>
                                         <h2><a href="inverted-pendulum.html">Inverted Pendulum<br />
                                         Dynamic Control</a></h2>
                                         <p style="text-align: center; font-weight: bold; color: #ff6666; margin-top: -1rem; margin-bottom: 1rem;">[ IN PROGRESS ]</p>
                                     </header>
                                     <a href="inverted-pendulum.html" class="image fit"><img src="images/pic03.jpg" alt="Inverted Pendulum" /></a>
-                                    <p>Implemented a C++ state-space control system with eigenvalue analysis to stabilize a highly dynamic physical system[cite: 4].</p>
+                                    <p>Implemented a C++ state-space control system with eigenvalue analysis to stabilize a highly dynamic physical system, integrating a sensor fusion pipeline into high-frequency PID loops.</p>
                                     <ul class="actions special">
                                         <li><a href="inverted-pendulum.html" class="button">View Project</a></li>
                                     </ul>
@@ -132,14 +132,40 @@
 
                                 <article>
                                     <header>
-                                        <span class="date">Nov 2025 - Jan 2026 [cite: 4]</span>
+                                        <span class="date">Nov 2025 - Jan 2026</span>
                                         <h2><a href="robotic-arm.html">6-DOF Robotic Arm<br />
                                         with Cycloidal Drive</a></h2>
                                     </header>
                                     <a href="robotic-arm.html" class="image fit"><img src="images/pic01.jpg" alt="6-DOF Robotic Arm" /></a>
-                                    <p>Designed a 6-axis arm in SolidWorks featuring custom 3D-printed cycloidal gearboxes[cite: 4].</p>
+                                    <p>Designed a 6-axis arm in SolidWorks featuring custom 3D-printed cycloidal gearboxes. Built a full ROS 2 control architecture with URDF files, tf2 transforms, and closed-loop PID controllers.</p>
                                     <ul class="actions special">
                                         <li><a href="robotic-arm.html" class="button">View Project</a></li>
+                                    </ul>
+                                </article>
+
+                                <article>
+                                    <header>
+                                        <span class="date">Sep - Nov 2025</span>
+                                        <h2><a href="planetary-manipulator.html">Robotic Manipulator<br />
+                                        Planetary Gearing</a></h2>
+                                    </header>
+                                    <a href="planetary-manipulator.html" class="image fit"><img src="images/pic04.jpg" alt="Robotic Manipulator" /></a>
+                                    <p>Designed a custom planetary gearing system in SolidWorks and programmed closed-loop brushless motor control in C++, developing a modular architecture for motion planning and feedback.</p>
+                                    <ul class="actions special">
+                                        <li><a href="planetary-manipulator.html" class="button">View Project</a></li>
+                                    </ul>
+                                </article>
+
+                                <article>
+                                    <header>
+                                        <span class="date">Jun - Aug 2025</span>
+                                        <h2><a href="servo-arm.html">6-DOF Servo<br />
+                                        Robotic Arm</a></h2>
+                                    </header>
+                                    <a href="servo-arm.html" class="image fit"><img src="images/pic05.jpg" alt="Servo Robotic Arm" /></a>
+                                    <p>Built an initial robotic arm concept in SolidWorks, selecting and procuring servo motors, and developed a ROS control architecture with motion planning for trajectory execution.</p>
+                                    <ul class="actions special">
+                                        <li><a href="servo-arm.html" class="button">View Project</a></li>
                                     </ul>
                                 </article>
 
@@ -152,15 +178,15 @@
                             <section class="alt">
                                 <h3>Location</h3>
                                 <p>Vancouver, BC<br />
-                                Canada [cite: 4]</p>
+                                Canada</p>
                             </section>
                             <section>
                                 <h3>Phone</h3>
-                                <p><a href="tel:+12368383234">+1 (236) 838-3234 [cite: 4]</a></p>
+                                <p><a href="tel:+12368383234">+1 (236) 838-3234</a></p>
                             </section>
                             <section>
                                 <h3>Email</h3>
-                                <p><a href="mailto:nla106@sfu.ca">nla106@sfu.ca [cite: 4]</a></p>
+                                <p><a href="mailto:nla106@sfu.ca">nla106@sfu.ca</a></p>
                             </section>
                             <section>
                                 <h3>Social</h3>
