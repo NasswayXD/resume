@@ -7,24 +7,27 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <style>
-            /* Make the background a solid dark grey instead of an image */
+            /* Force all text to be dark so it's visible on the light background */
             body.is-preload * { transition: none !important; }
-            #wrapper {
-                background-color: #212931; /* Solid dark color */
-                background-image: none !important;
-                padding-top: 3rem; /* Push everything down slightly from the browser top */
-            }
-            #bg { display: none !important; } /* Hide the default background script */
+            body, p, li, span { color: #333333 !important; }
+            h1, h2, h3, h4, h5, h6, strong, b { color: #1a1f24 !important; }
             
-            /* Fix the intro spacing and make it permanent (no fade) */
+            #wrapper {
+                /* YOUR CUSTOM BACKGROUND COLOR HERE */
+                background-color: rgb(255, 254, 212) !important; 
+                background-image: none !important;
+                padding-top: 3rem; 
+            }
+            #bg { display: none !important; } 
+            
             #intro {
                 height: auto !important;
                 min-height: 0 !important;
-                padding: 2rem 0 6rem 0 !important; /* Large bottom padding to prevent nav overlap */
+                padding: 2rem 0 6rem 0 !important; 
                 background: none !important;
-                opacity: 1 !important; /* Force visibility */
+                opacity: 1 !important; 
                 visibility: visible !important;
-                transform: none !important; /* Stop it from translating/moving */
+                transform: none !important; 
                 position: relative !important;
                 z-index: 2 !important;
             }
@@ -37,11 +40,11 @@
                 margin-bottom: 0 !important;
             }
             
-            /* Hide the bouncing arrow button */
             #intro .actions { display: none !important; }
-            
-            /* Hide the massive pop-up sticky header completely */
             #header { display: none !important; }
+            
+            /* Make sure the main content boxes look good on the cream background */
+            #main { background-color: #ffffff; border: 1px solid #e0e0e0; }
         </style>
     </head>
     <body class="is-preload">
