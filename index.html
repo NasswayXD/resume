@@ -12,15 +12,21 @@
             #wrapper {
                 background-color: #212931; /* Solid dark color */
                 background-image: none !important;
+                padding-top: 3rem; /* Push everything down slightly from the browser top */
             }
             #bg { display: none !important; } /* Hide the default background script */
             
-            /* Shrink the top header area */
+            /* Fix the intro spacing and make it permanent (no fade) */
             #intro {
                 height: auto !important;
                 min-height: 0 !important;
-                padding: 4rem 0 2rem 0 !important;
+                padding: 2rem 0 6rem 0 !important; /* Large bottom padding to prevent nav overlap */
                 background: none !important;
+                opacity: 1 !important; /* Force visibility */
+                visibility: visible !important;
+                transform: none !important; /* Stop it from translating/moving */
+                position: relative !important;
+                z-index: 2 !important;
             }
             #intro h1 {
                 font-size: 3rem !important;
@@ -30,8 +36,12 @@
                 font-size: 1rem !important;
                 margin-bottom: 0 !important;
             }
-            /* Hide the bouncing arrow button since the page is no longer massive */
+            
+            /* Hide the bouncing arrow button */
             #intro .actions { display: none !important; }
+            
+            /* Hide the massive pop-up sticky header completely */
+            #header { display: none !important; }
         </style>
     </head>
     <body class="is-preload">
@@ -43,10 +53,6 @@
                         <p>Mechatronics Engineering at Simon Fraser University | Siemens Certified<br />
                         Specializing in robotics, control systems, and mechanical design.</p>
                 </div>
-
-                <header id="header">
-                        <a href="index.html" class="logo">Portfolio</a>
-                </header>
 
                 <nav id="nav">
                         <ul class="links">
@@ -64,16 +70,30 @@
                             <header class="major">
                                 <h2>About Me</h2>
                             </header>
-                            <p>I am a 3rd-year Mechatronics Engineering student at Simon Fraser University actively seeking co-op opportunities. Passionate about bridging the gap between physical hardware and intelligent control systems, I specialize in end-to-end mechanical design, embedded programming, and dynamic robotics.</p>
+                            <p>Hi, I am Nazar, a 3rd-year Mechatronics Engineering student at Simon Fraser University actively seeking co-op opportunities. Passionate about bridging the gap between physical hardware and intelligent control systems, I specialize in end-to-end mechanical design, embedded programming, and dynamic robotics.</p>
                             
                             <h3>Technical Expertise</h3>
                             <ul>
                                 <li><strong>Education:</strong> Bachelor of Applied Science in Mechatronics Engineering, SFU (Expected Aug 2028)</li>
-                                <li><strong>Certifications:</strong> Siemens Mechatronic Systems Certification (SMSCP)</li>
                                 <li><strong>Programming & Software:</strong> C++, Python, MATLAB, ROS 2, Linux, Git, NVIDIA Isaac Sim/Lab</li>
                                 <li><strong>Hardware & CAD:</strong> SolidWorks, 3D Modeling, Rapid Prototyping, ESP32/STM32 Microcontrollers, Stepper/Brushless Servos</li>
                                 <li><strong>Control Systems:</strong> Robot Kinematics, PID Control, State-Space Modeling, Sensor Fusion</li>
                             </ul>
+                        </section>
+
+                        <section class="post">
+                            <header class="major">
+                                <h2>Certifications</h2>
+                            </header>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Siemens Mechatronic Systems Certification (SMSCP)</h3>
+                                    <p>Certified in electrical components, mechanical and electrical drives, pneumatic and hydraulic circuits, digital fundamentals, and Programmable Logic Controllers (PLCs).</p>
+                                    <ul class="actions">
+                                        <li><a href="your-certificate.pdf" target="_blank" class="button primary">View Certificate</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </section>
 
                         <section class="posts">
@@ -94,7 +114,7 @@
 
                                 <article>
                                     <header>
-                                        <span class="date">February 2026</span>
+                                        <span class="date">Feb 2026 - Present</span>
                                         <h2><a href="inverted-pendulum.html">Inverted Pendulum<br />
                                         Dynamic Control</a></h2>
                                         <p style="text-align: center; font-weight: bold; color: #ff6666; margin-top: -1rem; margin-bottom: 1rem;">[ IN PROGRESS ]</p>
